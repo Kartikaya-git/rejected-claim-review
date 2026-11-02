@@ -1,0 +1,31 @@
+Model: openai/gpt-oss-120b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Other
+Clause in question: 4.7 Cosmetic or Plastic Surgery
+Verdict: Cannot Tell
+Why: The checks generated from the clause found no problem. They are not tested, so this tool will not say the rejection is supported.
+Next step: These checks were generated for this claim and are not tested. Review the rejection yourself.
+Checks: generated from the clause for this claim, not tested.
+Conditions for the rejection to hold:
+  True: No waiver applies
+  True: No exception in the clause applies
+  True: Claim involves cosmetic or plastic surgery
+  True: Claim is not for reconstruction after an Accident, burn or cancer
+  True: Claim expenses are for surgery classified as cosmetic
+  True: The surgery is not medically required for reconstruction
+  True: No accident, burn or cancer related to the surgery
+Decided by: no_problem_found
+
+Evidence Checklist
+- Not Found: Illness treated
+- Found: Clause relied on = 4.7 Cosmetic or Plastic Surgery | "4.7 Cosmetic or Plastic Surgery (Code-Excl08). Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer." (clause 4.7, page 4)
+- Not Found: Fraud alleged
+- Not Found: Waiver or change to the clause
+- Not Found: Exception in the clause
+- Found: Claim involves cosmetic or plastic surgery = yes | "Final diagnosis: Rhinoplasty for cosmetic reasons" (hospital_summary)
+- Found: Claim is not for reconstruction after an Accident, burn or cancer = yes | "Final diagnosis: Rhinoplasty for cosmetic reasons" (hospital_summary)
+- Found: Claim expenses are for surgery classified as cosmetic = yes | "Final diagnosis: Rhinoplasty for cosmetic reasons" (hospital_summary)
+- Found: The surgery is not medically required for reconstruction = yes | "Final diagnosis: Rhinoplasty for cosmetic reasons" (hospital_summary)
+- Found: No accident, burn or cancer related to the surgery = yes | "Past history: No known illness. No injury. No burns." (hospital_summary)

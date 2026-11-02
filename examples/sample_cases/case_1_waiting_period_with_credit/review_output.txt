@@ -1,0 +1,28 @@
+Model: qwen/qwen3.8-27b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Waiting Period
+Clause in question: 4.2 Specified Disease or Procedure Waiting Period (Code-Excl02)
+Verdict: Reason Not Supported
+Why: The Waiting Period is 24 months, with 12 months of credit, so it ends on 2026-01-15. Admission was on 2026-06-10, so it was complete.
+Clause relied on: "excluded until the expiry of 24 months of continuous coverage" (clause 4.2, page 3)
+Next step: The Waiting Period appears complete on these dates. Ask the insurer to confirm the dates it used.
+Conditions for the rejection to hold:
+  True: No waiver applies
+  True: No exception in the clause applies
+  True: The cited clause covers this illness
+  False: The Waiting Period had not ended at admission
+Decided by: period_not_ended
+
+Evidence Checklist
+- Found: Illness treated = Right renal calculus (10 mm) with hydronephrosis | "Right renal calculus (10 mm) with hydronephrosis" (hospital_summary)
+- Found: Waiting Period clause = 4.2 Specified Disease or Procedure Waiting Period (Code-Excl02) | "4.2 Specified Disease or Procedure Waiting Period (Code-Excl02)" (clause 4.2, page 3)
+- Found: Length of the Waiting Period = 24 | "excluded until the expiry of 24 months of continuous coverage" (clause 4.2, page 3)
+- Found: Continuity benefit from earlier cover = 12 | "Portability credit accepted: 12 months of earlier continuous cover." (policy_certificate)
+- Not Found: Waiver or reduction
+- Found: Cover start date = 2025-01-15 | "Cover start date: 15 January 2025" (policy_certificate)
+- Found: Break in cover = no | "Break in cover: None" (policy_certificate)
+- Found: Admission date = 2026-06-10 | "Date of admission: 10 June 2026" (hospital_summary)
+- Not Found: Exception in the clause
+- Found: Illness falls under the clause = yes | "calculus diseases of the gall bladder and urogenital system, including kidney stones" (clause 4.2, page 3)

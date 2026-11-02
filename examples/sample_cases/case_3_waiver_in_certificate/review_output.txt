@@ -1,0 +1,36 @@
+Model: qwen/qwen3.8-27b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Pre-Existing Disease
+Clause in question: 4.1 Pre-Existing Diseases (Code-Excl01)
+Verdict: Reason Not Supported
+Why: The Customer File shows a waiver of this Waiting Period.
+Clause relied on: "The pre-existing disease waiting period is waived for hypertension for this insured person, after underwriter review." (policy_certificate)
+Next step: The Customer File shows a waiver. Raise it with the insurer, citing the quoted term.
+Conditions for the rejection to hold:
+  False: No waiver applies
+  False: No exception in the clause applies
+  True: The condition existed before cover
+  True: The illness is that condition or its complication
+  True: The condition falls within the Look-Back Limit
+  True: The Waiting Period had not ended at admission
+Decided by: no_waiver
+
+Evidence Checklist
+- Found: Basis of the rejection = waiting_period | "Hypertension is a pre-existing disease, and the 36 month waiting period has not been completed." (rejection_letter)
+- Found: Definition of Pre-Existing Disease = Clause 2.15 – Pre-Existing Disease | "2.15 Pre-Existing Disease means any condition, ailment, injury or disease" (clause 2.15, page 2)
+- Found: Pre-Existing Disease exclusion clause = 4.1 Pre-Existing Diseases (Code-Excl01) | "4.1 Pre-Existing Diseases (Code-Excl01). Expenses related to the treatment of a Pre-Existing Disease" (clause 4.1, page 3)
+- Found: Pre-Existing Disease Waiting Period = 36 | "excluded until the expiry of 36 months of continuous coverage" (clause 4.1, page 3)
+- Found: Moratorium clause = 5.2 Moratorium Period | "5.2 Moratorium Period. After completion of 60 continuous months of coverage" (clause 5.2, page 5)
+- Not Found: Continuity benefit from earlier cover
+- Found: Waiver or reduction = yes | "The pre-existing disease waiting period is waived for hypertension for this insured person, after underwriter review." (policy_certificate)
+- Found: Cover start date = 2025-01-15 | "Cover start date: 15 January 2025" (policy_certificate)
+- Found: Break in cover = no | "Break in cover: None" (policy_certificate)
+- Found: Illness treated = Hypertensive urgency | "Final diagnosis: Hypertensive urgency" (hospital_summary)
+- Found: Admission date = 2026-05-02 | "Date of admission: 2 May 2026" (hospital_summary)
+- Found: Exception in the clause = yes | "The pre-existing disease waiting period is waived for hypertension for this insured person, after underwriter review." (policy_certificate)
+- Found: Condition existed before cover = yes | "Hypertension, diagnosed on 12 August 2023, on regular treatment." (hospital_summary)
+- Found: Latest diagnosis or treatment before cover = 2023-08-12 | "Hypertension, diagnosed on 12 August 2023, on regular treatment." (hospital_summary)
+- Found: Illness is that condition or its complication = yes | "Final diagnosis: Hypertensive urgency" (hospital_summary)
+- Found: Declared on the application = yes | "Have you been diagnosed with or treated for any illness in the last 4 years? Yes. Hypertension." (application_form)

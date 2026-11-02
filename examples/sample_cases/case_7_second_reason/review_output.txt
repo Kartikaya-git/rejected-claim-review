@@ -1,0 +1,29 @@
+Model: openai/gpt-oss-120b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Waiting Period
+Clause in question: 4.2 Specified Disease or Procedure Waiting Period (Code-Excl02)
+Verdict: Cannot Tell
+Why: The reason checked does not hold up, but the letter gives another reason this tool did not check.
+Clause relied on: "Expenses related to the treatment of the listed conditions, surgeries and treatments shall be excluded until the expiry of 24 months of continuous coverage after the date of inception of the first Policy with Us." (clause 4.2, page 3)
+Next step: The letter also says: "Separately, the claim was intimated to us 45 days after discharge, which is beyond the time limit in the policy.". This tool did not check that. Review it before relying on this result.
+Other reason in the letter, not checked: "Separately, the claim was intimated to us 45 days after discharge, which is beyond the time limit in the policy."
+Conditions for the rejection to hold:
+  True: No waiver applies
+  True: No exception in the clause applies
+  True: The cited clause covers this illness
+  False: The Waiting Period had not ended at admission
+Decided by: other_reason
+
+Evidence Checklist
+- Found: Illness treated = Left ureteric calculus | "Final diagnosis: Left ureteric calculus (8 mm)" (hospital_summary)
+- Found: Waiting Period clause = 4.2 Specified Disease or Procedure Waiting Period (Code-Excl02) | "4.2 Specified Disease or Procedure Waiting Period (Code-Excl02). Expenses related to the treatment of the listed conditions, surgeries and treatments shall be excluded until the expiry of 24 months of continuous coverage after the date of inception of the first Policy with Us." (clause 4.2, page 3)
+- Found: Length of the Waiting Period = 24 | "Expenses related to the treatment of the listed conditions, surgeries and treatments shall be excluded until the expiry of 24 months of continuous coverage after the date of inception of the first Policy with Us." (clause 4.2, page 3)
+- Found: Continuity benefit from earlier cover = 12 | "Portability credit accepted: 12 months of earlier continuous cover." (policy_certificate)
+- Not Found: Waiver or reduction
+- Found: Cover start date = 2025-01-15 | "Cover start date: 15 January 2025" (policy_certificate)
+- Found: Break in cover = no | "Break in cover: None" (policy_certificate)
+- Found: Admission date = 2026-06-12 | "Date of admission: 12 June 2026" (hospital_summary)
+- Not Found: Exception in the clause
+- Found: Illness falls under the clause = yes | "Expenses related to the treatment of the listed conditions, surgeries and treatments shall be excluded until the expiry of 24 months of continuous coverage after the date of inception of the first Policy with Us." (clause 4.2, page 3)

@@ -1,0 +1,36 @@
+Model: qwen/qwen3.8-27b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Pre-Existing Disease
+Clause in question: Clause 4.1 – Pre-Existing Diseases (Code-Excl01)
+Verdict: Reason Supported
+Why: The Waiting Period is 36 months, so it ends on 2028-01-15. Admission was on 2026-06-10, so it was not complete.
+Clause relied on: "excluded until the expiry of 36 months of continuous coverage" (clause 4.1, page 3)
+Next step: The Customer File supports the stated reason. Confirm there is no waiver or earlier cover to credit.
+Conditions for the rejection to hold:
+  True: No waiver applies
+  True: No exception in the clause applies
+  True: The condition existed before cover
+  True: The illness is that condition or its complication
+  True: The condition falls within the Look-Back Limit
+  True: The Waiting Period had not ended at admission
+Decided by: all_conditions_true
+
+Evidence Checklist
+- Found: Basis of the rejection = waiting_period | "Diabetes mellitus is a pre-existing disease, and the 36 month waiting period has not been completed." (rejection_letter)
+- Found: Definition of Pre-Existing Disease = Clause 2.15 – Pre-Existing Disease | "2.15 Pre-Existing Disease means any condition, ailment, injury or disease" (clause 2.15, page 2)
+- Found: Pre-Existing Disease exclusion clause = Clause 4.1 – Pre-Existing Diseases (Code-Excl01) | "4.1 Pre-Existing Diseases (Code-Excl01). Expenses related to the treatment of a Pre-Existing Disease and its direct complications shall be excluded" (clause 4.1, page 3)
+- Found: Pre-Existing Disease Waiting Period = 36 | "excluded until the expiry of 36 months of continuous coverage" (clause 4.1, page 3)
+- Found: Moratorium clause = 5.2 Moratorium Period | "5.2 Moratorium Period. After completion of 60 continuous months of coverage" (clause 5.2, page 5)
+- Not Found: Continuity benefit from earlier cover
+- Not Found: Waiver or reduction
+- Found: Cover start date = 2025-01-15 | "Cover start date: 15 January 2025" (policy_certificate)
+- Found: Break in cover = no | "Break in cover: None" (policy_certificate)
+- Found: Illness treated = Diabetic foot ulcer, left foot, with cellulitis | "Final diagnosis: Diabetic foot ulcer, left foot, with cellulitis" (hospital_summary)
+- Found: Admission date = 2026-06-10 | "Date of admission: 10 June 2026" (hospital_summary)
+- Not Found: Exception in the clause
+- Found: Condition existed before cover = yes | "Type 2 diabetes mellitus, diagnosed on 5 March 2024, on oral medication." (hospital_summary)
+- Found: Latest diagnosis or treatment before cover = 2024-03-05 | "Type 2 diabetes mellitus, diagnosed on 5 March 2024" (hospital_summary)
+- Found: Illness is that condition or its complication = yes | "a complication of poorly controlled diabetes" (hospital_summary)
+- Found: Declared on the application = yes | "Have you been diagnosed with or treated for any illness in the last 4 years? Yes. Type 2 diabetes mellitus." (application_form)

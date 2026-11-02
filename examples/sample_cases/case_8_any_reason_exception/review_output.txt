@@ -1,0 +1,32 @@
+Model: openai/gpt-oss-120b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Other
+Clause in question: 4.7 Cosmetic or Plastic Surgery
+Verdict: Reason Not Supported
+Why: The policy states an exception to this clause, and this claim appears to meet it.
+Clause relied on: "Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer." (clause 4.7, page 4)
+Next step: The clause has an exception this claim appears to meet. Raise it with the insurer, citing the quoted term.
+Checks: generated from the clause for this claim, not tested.
+Conditions for the rejection to hold:
+  True: No waiver applies
+  False: No exception in the clause applies
+  Unknown: Expense is for cosmetic or plastic surgery
+  False: Surgery is not required for reconstruction following an Accident, burns or cancer
+  True: Claim relates to hospitalisation involving such surgery
+  True: Policy clause 4.7 excludes these expenses
+  Unknown: No exception applies
+Decided by: no_exception
+
+Evidence Checklist
+- Found: Illness treated = Post-burn contracture of the neck | "Final diagnosis: Post-burn contracture of the neck, needing reconstruction" (hospital_summary)
+- Found: Clause relied on = 4.7 Cosmetic or Plastic Surgery | "4.7 Cosmetic or Plastic Surgery (Code-Excl08). Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer." (clause 4.7, page 4)
+- Not Found: Fraud alleged
+- Not Found: Waiver or change to the clause
+- Found: Exception in the clause = yes | "Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer." (clause 4.7, page 4)
+- Not Found: Expense is for cosmetic or plastic surgery
+- Found: Surgery is not required for reconstruction following an Accident, burns or cancer = no | "Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer." (clause 4.7, page 4)
+- Found: Claim relates to hospitalisation involving such surgery = yes | "Admitted for release of the burn contracture with skin grafting" (hospital_summary)
+- Found: Policy clause 4.7 excludes these expenses = yes | "Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer." (clause 4.7, page 4)
+- Not Found: No exception applies

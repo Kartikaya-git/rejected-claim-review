@@ -1,0 +1,207 @@
+{
+  "verdict": "Reason Not Supported",
+  "rejection_reason": "other",
+  "next_step": "The clause has an exception this claim appears to meet. Raise it with the insurer, citing the quoted term.",
+  "items": [
+    {
+      "id": "illness_treated",
+      "label": "Illness treated",
+      "status": "Found",
+      "required": true,
+      "value": "Post-burn contracture of the neck",
+      "quote": "Final diagnosis: Post-burn contracture of the neck, needing reconstruction",
+      "source": "hospital_summary",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "cited_clause",
+      "label": "Clause relied on",
+      "status": "Found",
+      "required": false,
+      "value": "4.7 Cosmetic or Plastic Surgery",
+      "quote": "4.7 Cosmetic or Plastic Surgery (Code-Excl08). Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer.",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 4.7, page 4",
+      "search_trace": [
+        "Searched for Clause relied on with Post-burn contracture of the neck: clause 4.7, clause 6.3, clause 4.2, clause 4.1"
+      ]
+    },
+    {
+      "id": "fraud_alleged",
+      "label": "Fraud alleged",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "waiver",
+      "label": "Waiver or change to the clause",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": null,
+      "location": null,
+      "search_trace": [
+        "Searched for Waiver or change to the clause: clause 4.7, clause 5.5, clause 2.16, clause 5.2"
+      ]
+    },
+    {
+      "id": "clause_exception",
+      "label": "Exception in the clause",
+      "status": "Found",
+      "required": false,
+      "value": "yes",
+      "quote": "Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer.",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 4.7, page 4",
+      "search_trace": [
+        "Searched for Exception in the clause with Post-burn contracture of the neck: clause 4.7, clause 4.2, clause 5.2, clause 4.3"
+      ]
+    },
+    {
+      "id": "generated_1",
+      "label": "Expense is for cosmetic or plastic surgery",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": null,
+      "location": null,
+      "search_trace": [
+        "Searched for Expense is for cosmetic or plastic surgery: clause 4.7, clause 3.2, clause 3.3, clause 5.4"
+      ]
+    },
+    {
+      "id": "generated_2",
+      "label": "Surgery is not required for reconstruction following an Accident, burns or cancer",
+      "status": "Found",
+      "required": false,
+      "value": "no",
+      "quote": "Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer.",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 4.7, page 4",
+      "search_trace": [
+        "Searched for Surgery is not required for reconstruction following an Accident, burns or cancer: clause 4.7, clause 4.2, clause 4, clause 4.3"
+      ]
+    },
+    {
+      "id": "generated_3",
+      "label": "Claim relates to hospitalisation involving such surgery",
+      "status": "Found",
+      "required": false,
+      "value": "yes",
+      "quote": "Admitted for release of the burn contracture with skin grafting",
+      "source": "hospital_summary",
+      "note": null,
+      "location": null,
+      "search_trace": [
+        "Searched for Claim relates to hospitalisation involving such surgery: clause 4.7, clause 3.3, clause 3.2, clause 3.1"
+      ]
+    },
+    {
+      "id": "generated_4",
+      "label": "Policy clause 4.7 excludes these expenses",
+      "status": "Found",
+      "required": false,
+      "value": "yes",
+      "quote": "Expenses for cosmetic or plastic surgery are excluded unless required for reconstruction following an Accident, burns or cancer.",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 4.7, page 4",
+      "search_trace": [
+        "Searched for Policy clause 4.7 excludes these expenses: clause 4.7, clause 4.4, clause 4.5, clause 4.9"
+      ]
+    },
+    {
+      "id": "generated_5",
+      "label": "No exception applies",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": null,
+      "location": null,
+      "search_trace": [
+        "Searched for No exception applies: clause 4.7, clause 5.2, clause 5.4, clause 5.3"
+      ]
+    }
+  ],
+  "date_check": null,
+  "decided_by": "no_exception",
+  "conditions": [
+    {
+      "id": "no_waiver",
+      "label": "No waiver applies",
+      "truth": "True",
+      "why": "No waiver applies",
+      "next_step": "",
+      "evidence": null
+    },
+    {
+      "id": "no_exception",
+      "label": "No exception in the clause applies",
+      "truth": "False",
+      "why": "The policy states an exception to this clause, and this claim appears to meet it.",
+      "next_step": "The clause has an exception this claim appears to meet. Raise it with the insurer, citing the quoted term.",
+      "evidence": "clause_exception"
+    },
+    {
+      "id": "generated_1",
+      "label": "Expense is for cosmetic or plastic surgery",
+      "truth": "Unknown",
+      "why": "Unsettled: Expense is for cosmetic or plastic surgery",
+      "next_step": "Check or obtain this evidence before deciding: Expense is for cosmetic or plastic surgery.",
+      "evidence": "generated_1"
+    },
+    {
+      "id": "generated_2",
+      "label": "Surgery is not required for reconstruction following an Accident, burns or cancer",
+      "truth": "False",
+      "why": "The documents show this does not hold: Surgery is not required for reconstruction following an Accident, burns or cancer",
+      "next_step": "The documents contradict what the rejection needs. Raise this with the insurer, citing the quote.",
+      "evidence": "generated_2"
+    },
+    {
+      "id": "generated_3",
+      "label": "Claim relates to hospitalisation involving such surgery",
+      "truth": "True",
+      "why": "Claim relates to hospitalisation involving such surgery",
+      "next_step": "",
+      "evidence": "generated_3"
+    },
+    {
+      "id": "generated_4",
+      "label": "Policy clause 4.7 excludes these expenses",
+      "truth": "True",
+      "why": "Policy clause 4.7 excludes these expenses",
+      "next_step": "",
+      "evidence": "generated_4"
+    },
+    {
+      "id": "generated_5",
+      "label": "No exception applies",
+      "truth": "Unknown",
+      "why": "Unsettled: No exception applies",
+      "next_step": "Check or obtain this evidence before deciding: No exception applies.",
+      "evidence": "generated_5"
+    }
+  ],
+  "other_reason": null,
+  "checks_generated": true,
+  "rule_versions": [],
+  "transition_flag": null
+}

@@ -1,0 +1,28 @@
+Model: qwen/qwen3.8-27b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Waiting Period
+Clause in question: 4.2 Specified Disease or Procedure Waiting Period (Code-Excl02)
+Verdict: Reason Not Supported
+Why: The policy states an exception to this clause, and this claim appears to meet it.
+Clause relied on: "This does not apply if the condition arises from an Accident." (clause 4.2, page 3)
+Next step: The clause has an exception this claim appears to meet. Raise it with the insurer, citing the quoted term.
+Conditions for the rejection to hold:
+  True: No waiver applies
+  False: No exception in the clause applies
+  False: The cited clause covers this illness
+  True: The Waiting Period had not ended at admission
+Decided by: no_exception
+
+Evidence Checklist
+- Found: Illness treated = Displaced fracture of the right neck of femur after a road traffic accident | "Final diagnosis: Displaced fracture of the right neck of femur after a road traffic accident" (hospital_summary)
+- Found: Waiting Period clause = 4.2 Specified Disease or Procedure Waiting Period (Code-Excl02) | "4.2 Specified Disease or Procedure Waiting Period (Code-Excl02)" (clause 4.2, page 3)
+- Found: Length of the Waiting Period = 24 | "shall be excluded until the expiry of 24 months of continuous coverage" (clause 4.2, page 3)
+- Not Found: Continuity benefit from earlier cover
+- Found: Waiver or reduction = no | "No special conditions or endorsements apply to this policy." (policy_certificate)
+- Found: Cover start date = 2025-01-15 | "Cover start date: 15 January 2025" (policy_certificate)
+- Found: Break in cover = no | "Break in cover: None" (policy_certificate)
+- Found: Admission date = 2026-08-03 | "Date of admission: 3 August 2026" (hospital_summary)
+- Found: Exception in the clause = yes | "This does not apply if the condition arises from an Accident." (clause 4.2, page 3)
+- Found: Illness falls under the clause = no | "joint replacement other than following an Accident" (clause 4.2, page 3)

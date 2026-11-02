@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.openrouter_key
+.groq_key
+.env
+
+data/
+.cerebras_key
+.gemini_key
+*.egg-info/
+.DS_Store
+.claude/

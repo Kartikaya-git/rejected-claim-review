@@ -1,0 +1,56 @@
+[
+  {
+    "case": "case_1_waiting_period_with_credit",
+    "scenario": "Kidney stone surgery rejected under the 24 month Specified Disease waiting period. The certificate carries a 12 month portability credit that the letter ignores.",
+    "expected_verdict": "Reason Not Supported",
+    "expected_decided_by": "period_not_ended"
+  },
+  {
+    "case": "case_2_pre_existing_supported",
+    "scenario": "Diabetic foot ulcer in the second policy year. Diabetes was diagnosed before cover and the 36 month period is not over, so the rejection holds.",
+    "expected_verdict": "Reason Supported",
+    "expected_decided_by": "all_conditions_true"
+  },
+  {
+    "case": "case_3_waiver_in_certificate",
+    "scenario": "Same type of rejection, but a written endorsement on the certificate waives the waiting period for this condition. A plain search on the letter would miss it.",
+    "expected_verdict": "Reason Not Supported",
+    "expected_decided_by": "no_waiver"
+  },
+  {
+    "case": "case_4_unrelated_illness",
+    "scenario": "Appendicitis rejected because the patient has diabetes. The earlier condition is real but has no link to this illness.",
+    "expected_verdict": "Reason Not Supported",
+    "expected_decided_by": "same_illness"
+  },
+  {
+    "case": "case_5_missing_application_form",
+    "scenario": "Rejected for non-disclosure, but the application form is not in the Customer File, so the tool should say what is missing rather than guess.",
+    "expected_verdict": "Cannot Tell",
+    "expected_decided_by": "unknown_conditions"
+  },
+  {
+    "case": "case_6_accident_exception",
+    "scenario": "Hip replacement rejected under the 24 month waiting period. Clause 4.2 says the waiting period does not apply to a condition arising from an Accident, and the records show a road accident.",
+    "expected_verdict": "Reason Not Supported",
+    "expected_decided_by": "no_exception"
+  },
+  {
+    "case": "case_7_second_reason",
+    "scenario": "The Waiting Period reason fails on a 12 month credit, but the letter also rejects the claim for late intimation, which this tool does not check. The result must not read as a win.",
+    "expected_verdict": "Cannot Tell",
+    "expected_decided_by": "other_reason"
+  },
+  {
+    "case": "case_8_any_reason_exception",
+    "scenario": "A reason with no fixed checklist. Plastic surgery is rejected as cosmetic, but the clause allows reconstruction after burns, and the records show burns.",
+    "expected_verdict": "Reason Not Supported",
+    "expected_decided_by": "no_exception"
+  },
+  {
+    "case": "case_9_any_reason_no_problem",
+    "scenario": "A reason with no fixed checklist, where the rejection looks right. The generated checks may find no problem, but the tool must not say Reason Supported.",
+    "expected_verdict": "Cannot Tell",
+    "expected_decided_by": "no_problem_found"
+  }
+]

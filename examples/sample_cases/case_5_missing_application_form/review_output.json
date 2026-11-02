@@ -1,0 +1,302 @@
+{
+  "verdict": "Cannot Tell",
+  "rejection_reason": "pre_existing_disease",
+  "next_step": "Obtain the application form to see what was declared.",
+  "items": [
+    {
+      "id": "rejection_basis",
+      "label": "Basis of the rejection",
+      "status": "Found",
+      "required": true,
+      "value": "non_disclosure",
+      "quote": "Your claim is rejected under clause 5.1 of the policy, for non-disclosure of a material fact.",
+      "source": "rejection_letter",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "ped_definition",
+      "label": "Definition of Pre-Existing Disease",
+      "status": "Found",
+      "required": false,
+      "value": "2.15",
+      "quote": "2.15 Pre-Existing Disease means any condition, ailment, injury or disease that is diagnosed by a physician",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 2.15, page 2",
+      "search_trace": [
+        "Searched for Definition of Pre-Existing Disease: clause 5.1, clause 2.15, clause 4.1, clause 2.9"
+      ]
+    },
+    {
+      "id": "ped_exclusion",
+      "label": "Pre-Existing Disease exclusion clause",
+      "status": "Found",
+      "required": false,
+      "value": "Clause 4.1 \u2013 Pre-Existing Diseases (Code-Excl01)",
+      "quote": "4.1 Pre-Existing Diseases (Code-Excl01). Expenses related to the treatment of a Pre-Existing Disease and its direct complications shall be excluded",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 4.1, page 3",
+      "search_trace": [
+        "Searched for Pre-Existing Disease exclusion clause: clause 4.1, clause 5.1, clause 4.2, clause 2.15"
+      ]
+    },
+    {
+      "id": "waiting_months",
+      "label": "Pre-Existing Disease Waiting Period",
+      "status": "Found",
+      "required": false,
+      "value": "36",
+      "quote": "excluded until the expiry of 36 months of continuous coverage",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 4.1, page 3",
+      "search_trace": [
+        "Searched for Pre-Existing Disease Waiting Period: clause 4.1, clause 5.1, clause 4.2, clause 2.15"
+      ]
+    },
+    {
+      "id": "moratorium_clause",
+      "label": "Moratorium clause",
+      "status": "Found",
+      "required": false,
+      "value": "5.2 Moratorium Period",
+      "quote": "5.2 Moratorium Period. After completion of 60 continuous months of coverage",
+      "source": "policy_wording",
+      "note": null,
+      "location": "clause 5.2, page 5",
+      "search_trace": [
+        "Searched for Moratorium clause: clause 5.1, clause 5.2, clause 5.3, clause 2.4"
+      ]
+    },
+    {
+      "id": "continuity_credit_months",
+      "label": "Continuity benefit from earlier cover",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "waiver",
+      "label": "Waiver or reduction",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": null,
+      "location": null,
+      "search_trace": [
+        "Searched for Waiver or reduction: clause 5.1, clause 5.5, clause 4.3, clause 4"
+      ]
+    },
+    {
+      "id": "cover_start",
+      "label": "Cover start date",
+      "status": "Found",
+      "required": true,
+      "value": "2025-01-15",
+      "quote": "Cover start date: 15 January 2025",
+      "source": "policy_certificate",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "break_in_cover",
+      "label": "Break in cover",
+      "status": "Found",
+      "required": false,
+      "value": "no",
+      "quote": "Break in cover: None",
+      "source": "policy_certificate",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "illness_treated",
+      "label": "Illness treated",
+      "status": "Found",
+      "required": true,
+      "value": "Unstable angina, ischaemic heart disease",
+      "quote": "Final diagnosis: Unstable angina, ischaemic heart disease",
+      "source": "hospital_summary",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "admission_date",
+      "label": "Admission date",
+      "status": "Found",
+      "required": true,
+      "value": "2026-06-20",
+      "quote": "Date of admission: 20 June 2026",
+      "source": "hospital_summary",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "clause_exception",
+      "label": "Exception in the clause",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": null,
+      "location": null,
+      "search_trace": [
+        "Searched for Exception in the clause with Unstable angina, ischaemic heart disease Unstable angina, ischaemic heart disease: clause 4.1, clause 5.1, clause 2.15, clause 4.2"
+      ]
+    },
+    {
+      "id": "condition_before_cover",
+      "label": "Condition existed before cover",
+      "status": "Found",
+      "required": false,
+      "value": "yes",
+      "quote": "Ischaemic heart disease, diagnosed on 9 November 2023, on medication.",
+      "source": "hospital_summary",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "prior_condition_date",
+      "label": "Latest diagnosis or treatment before cover",
+      "status": "Found",
+      "required": false,
+      "value": "2023-11-09",
+      "quote": "Ischaemic heart disease, diagnosed on 9 November 2023, on medication.",
+      "source": "hospital_summary",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "same_condition",
+      "label": "Illness is that condition or its complication",
+      "status": "Found",
+      "required": false,
+      "value": "yes",
+      "quote": "Final diagnosis: Unstable angina, ischaemic heart disease",
+      "source": "hospital_summary",
+      "note": null,
+      "location": null,
+      "search_trace": []
+    },
+    {
+      "id": "declared_on_application",
+      "label": "Declared on the application",
+      "status": "Not Found",
+      "required": false,
+      "value": null,
+      "quote": null,
+      "source": null,
+      "note": "Document not provided.",
+      "location": null,
+      "search_trace": []
+    }
+  ],
+  "date_check": {
+    "cover_start": "2025-01-15",
+    "admission_date": "2026-06-20",
+    "waiting_months": 36,
+    "credit_months": 0,
+    "period_ends": "2028-01-15",
+    "period_passed": false,
+    "moratorium_months": 60,
+    "moratorium_ends": "2030-01-15",
+    "moratorium_complete": false
+  },
+  "decided_by": "unknown_conditions",
+  "reason_not_covered": false,
+  "conditions": [
+    {
+      "id": "no_waiver",
+      "label": "No waiver applies",
+      "truth": "True",
+      "why": "No waiver applies",
+      "next_step": "",
+      "evidence": null
+    },
+    {
+      "id": "no_exception",
+      "label": "No exception in the clause applies",
+      "truth": "True",
+      "why": "No exception in the clause applies",
+      "next_step": "",
+      "evidence": null
+    },
+    {
+      "id": "condition_existed",
+      "label": "The condition existed before cover",
+      "truth": "True",
+      "why": "The condition existed before cover",
+      "next_step": "",
+      "evidence": "condition_before_cover"
+    },
+    {
+      "id": "same_illness",
+      "label": "The illness is that condition or its complication",
+      "truth": "True",
+      "why": "The illness is that condition or its complication",
+      "next_step": "",
+      "evidence": "same_condition"
+    },
+    {
+      "id": "within_look_back",
+      "label": "The condition falls within the Look-Back Limit",
+      "truth": "True",
+      "why": "The condition falls within the Look-Back Limit",
+      "next_step": "",
+      "evidence": "prior_condition_date"
+    },
+    {
+      "id": "moratorium_not_complete",
+      "label": "The Moratorium was not complete at admission",
+      "truth": "True",
+      "why": "The Moratorium was not complete at admission",
+      "next_step": "",
+      "evidence": "moratorium_clause"
+    },
+    {
+      "id": "not_declared",
+      "label": "The condition was not declared",
+      "truth": "Unknown",
+      "why": "The application form is not available or does not settle this.",
+      "next_step": "Obtain the application form to see what was declared.",
+      "evidence": "declared_on_application"
+    }
+  ],
+  "other_reason": null,
+  "rule_versions": [
+    {
+      "id": "ped_look_back_months",
+      "value": 36,
+      "valid_from": "2024-04-01",
+      "valid_until": null,
+      "source": "https://royalsundaram.in/assets/Websiteupdate-Healthregulations.pdf",
+      "evidence": "insurer compliance note"
+    },
+    {
+      "id": "moratorium_months",
+      "value": 60,
+      "valid_from": "2024-04-01",
+      "valid_until": null,
+      "source": "https://mail.caalley.com/irda24/Master_Circular_on_Health_Insurance_Business_29052024.pdf",
+      "evidence": "circular text, reproduced"
+    }
+  ],
+  "transition_flag": null
+}

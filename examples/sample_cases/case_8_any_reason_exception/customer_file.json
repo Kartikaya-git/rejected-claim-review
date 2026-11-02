@@ -1,0 +1,8 @@
+{
+  "_note": "Synthetic sample. Fictional insurer and people.",
+  "rejection_letter": "examples/sample_cases/case_8_any_reason_exception/rejection_letter.pdf",
+  "policy_wording": "examples/sample_cases/Sahyog_Family_Health_Plan_policy_wording.pdf",
+  "policy_certificate": "examples/sample_cases/case_8_any_reason_exception/policy_certificate.pdf",
+  "hospital_summary": "examples/sample_cases/case_8_any_reason_exception/discharge_summary.pdf",
+  "application_form": "examples/sample_cases/case_8_any_reason_exception/application_form.pdf"
+}
