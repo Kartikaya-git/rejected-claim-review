@@ -1,8 +1,0 @@
-{
-  "_note": "Synthetic example. No real person or insurer.",
-  "rejection_letter": "Dear Customer, your claim is rejected under clause 6.1. Diabetes is a pre-existing disease and the 36 month waiting period has not been completed.",
-  "policy_wording": "3.1 Pre-existing Disease means any condition diagnosed by a physician not more than 36 months prior to commencement of the policy. 6.1 Pre-existing Diseases (Code-Excl01): expenses are excluded until the expiry of 36 months of continuous coverage. 8.2 Moratorium period: after 60 months of continuous coverage no look back applies.",
-  "policy_certificate": "Cover start date: 15 January 2025. Break in cover: None. Special conditions: none.",
-  "hospital_summary": "Diagnosis: acute appendicitis. Date of admission: 10 June 2026. Past history: diabetes mellitus, diagnosed on 5 March 2024. Appendicectomy performed.",
-  "application_form": "Medical history declared: none."
-}

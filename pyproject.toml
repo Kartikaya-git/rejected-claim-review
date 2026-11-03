@@ -3,12 +3,4 @@ name = "claim-review"
 version = "0.1.0"
 description = "First-pass review of rejected Indian health insurance claims"
 requires-python = ">=3.12"
-dependencies = ["pypdf", "cryptography", "rank-bm25", "fastembed"]
-
-[project.optional-dependencies]
-dev = ["pytest", "reportlab"]
-app = ["streamlit"]
-
-[tool.pytest.ini_options]
-pythonpath = ["src"]
-testpaths = ["tests"]
+dependencies = ["pypdf", "cryptography", "rank-bm25", "fastembed", "streamlit"]
