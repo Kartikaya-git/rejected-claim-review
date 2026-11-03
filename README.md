@@ -84,7 +84,7 @@ Decided by: period_not_ended
 
 ## Where it fails
 
-- It has not yet given a correct result on a real ombudsman case, and there is no accuracy figure.
+- Tested so far on made-up claims. On 5 real ombudsman cases, an early version with weaker free models answered Cannot Tell every time, never wrong but never right, so there is no accuracy figure yet.
 - Medical judgement can come back unclear, as in case 4.
 - Weaker models reword quotes, the check rejects them, and reviews end in Cannot Tell.
 - A real quote can be misread, so a person reviews every result.
