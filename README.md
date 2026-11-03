@@ -36,6 +36,14 @@ A review makes about 15 LLM calls and takes from under a minute to a few minutes
 
 **All of these are made up:** the insurer, hospital, doctors and customers are fictional.
 
+How to read the table:
+
+| Column | Meaning |
+|---|---|
+| Expected | The right answer, decided when the case was written, before the tool ran on it |
+| Tool | What the tool actually said in its live run, saved in that folder's `result.txt` |
+| Match | **Yes:** the Verdict and the reason behind it both matched. **Verdict only:** the Verdict matched, but the tool reached it a different way. **No:** the Verdict was wrong |
+
 | Case | What happens | Expected | Tool | Match |
 |---|---|---|---|---|
 | [1](test_cases/case_1_waiting_period_with_credit) | Kidney stone surgery rejected under a 24 month wait. The certificate has a 12 month credit the letter ignores | Reason Not Supported | Reason Not Supported | Yes |
