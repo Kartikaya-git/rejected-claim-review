@@ -229,19 +229,20 @@ def _check_item(item: ChecklistItem, evidence: Evidence, reader: Reader) -> Item
     )
 
 
-def _read_rejection_reason(documents: dict[str, str], reader: Reader) -> RejectionReason | None:
+def _read_rejection_reason(documents: dict[str, str], reader: Reader) -> tuple[RejectionReason | None, str]:
+    """The reason, and the letter's own words for it."""
     passages = _candidates(("rejection_letter",), documents)
     if not passages:
-        return None
+        return None, ""
     answer = reader.answer(REJECTION_REASON_QUESTION, passages)
     if answer.is_unclear or answer.is_not_found:
-        return None
+        return None, ""
     if not quote_in_source(answer.quote, documents["rejection_letter"]):
-        return None
+        return None, ""
     try:
-        return RejectionReason(answer.value)
+        return RejectionReason(answer.value), answer.quote
     except ValueError:
-        return None
+        return None, ""
 
 
 def _read_other_reason(documents: dict[str, str], reader: Reader) -> str | None:
@@ -299,8 +300,12 @@ def _check_items(checklist: tuple[ChecklistItem, ...], evidence: Evidence, reade
     return results
 
 
-def _generate_checks(evidence: Evidence, reader: Reader) -> tuple[ChecklistItem, ...]:
-    cited = next(item for item in ANY_REASON_CHECKLIST if item.id == "cited_clause")
+def _focused_on(item: ChecklistItem, stated_reason: str) -> ChecklistItem:
+    """A letter may name no clause, so its own words point the search at the right one."""
+    return replace(item, search_query=stated_reason, keywords=stated_reason)
+
+
+def _generate_checks(evidence: Evidence, reader: Reader, cited: ChecklistItem) -> tuple[ChecklistItem, ...]:
     print("Generating checks from the clause", file=sys.stderr, flush=True)
     answer = reader.answer(CONDITIONS_QUESTION, evidence.passages(cited)[0])
     if answer.is_unclear or answer.is_not_found:
@@ -309,9 +314,13 @@ def _generate_checks(evidence: Evidence, reader: Reader) -> tuple[ChecklistItem,
     return tuple(generated_item(number, fact) for number, fact in enumerate(facts[:MAX_GENERATED_CHECKS], start=1))
 
 
-def _review_any_reason(evidence: Evidence, reader: Reader, reason: RejectionReason, other_reason: str | None) -> Review:
-    by_id = _check_items(ANY_REASON_CHECKLIST, evidence, reader)
-    generated = _generate_checks(evidence, reader)
+def _review_any_reason(
+    evidence: Evidence, reader: Reader, reason: RejectionReason, stated_reason: str, other_reason: str | None
+) -> Review:
+    checklist = tuple(_focused_on(item, stated_reason) for item in ANY_REASON_CHECKLIST)
+    by_id = _check_items(checklist, evidence, reader)
+    cited = next(item for item in checklist if item.id == "cited_clause")
+    generated = _generate_checks(evidence, reader, cited)
     by_id |= _check_items(generated, evidence, reader)
     outcome = limit_to_checked_reason(any_reason_outcome(by_id, [item.id for item in generated]), other_reason)
     return Review(
@@ -329,7 +338,7 @@ def _review_any_reason(evidence: Evidence, reader: Reader, reason: RejectionReas
 
 def review_claim(customer_file: CustomerFile, reader: Reader, embedder: Embedder | None = None) -> Review:
     documents = customer_file.documents()
-    reason = _read_rejection_reason(documents, reader)
+    reason, stated_reason = _read_rejection_reason(documents, reader)
     if reason is None:
         return Review(
             Verdict.CANNOT_TELL,
@@ -339,7 +348,7 @@ def review_claim(customer_file: CustomerFile, reader: Reader, embedder: Embedder
     other_reason = _read_other_reason(documents, reader)
     evidence = Evidence(customer_file, embedder)
     if reason is RejectionReason.OTHER:
-        return _review_any_reason(evidence, reader, reason, other_reason)
+        return _review_any_reason(evidence, reader, reason, stated_reason, other_reason)
 
     by_id = _check_items(CHECKLISTS[reason], evidence, reader)
     _flag_shared_quote(by_id)
