@@ -47,8 +47,9 @@ A review makes about 15 LLM calls and takes from under a minute to a few minutes
 | [7](test_cases/case_7_second_reason) | The Waiting Period fails on credit, but the letter also says late intimation | Cannot Tell | Cannot Tell | Yes |
 | [8](test_cases/case_8_any_reason_exception) | No fixed checklist. Plastic surgery rejected, but it follows burns | Reason Not Supported | Reason Not Supported | Yes |
 | [9](test_cases/case_9_any_reason_no_problem) | No fixed checklist. Cosmetic surgery, and the rejection looks right | Cannot Tell, no problem found | Cannot Tell, no problem found | Yes |
+| [10](test_cases/case_10_any_reason_date_check) | No fixed checklist. Rejected as late, but submitted 15 days after discharge. The LLM does the date arithmetic | Reason Not Supported | Reason Not Supported | Yes |
 
-**Result: 8 of 9, one live run each.** Cases 1 to 6 ran on `qwen/qwen3.8-27b` and cases 7 to 9 on `openai/gpt-oss-120b`, because the free limit ran out. The app uses `openai/gpt-oss-120b` by default. I wrote these cases and their expected results, so they are not an unseen test.
+**Result: 9 of 10, one live run each.** Cases 1 to 6 ran on `qwen/qwen3.8-27b` and cases 7 to 10 on `openai/gpt-oss-120b`, because the free limit ran out. The app uses `openai/gpt-oss-120b` by default. I wrote these cases and their expected results, so they are not an unseen test.
 
 Example output, from case 1:
 
@@ -75,5 +76,5 @@ Decided by: period_not_ended
 - Medical judgement can come back unclear, as in case 4.
 - Weaker models reword quotes, the check rejects them, and reviews end in Cannot Tell.
 - A real quote can be misread, so a person reviews every result.
-- Checks generated for reasons with no fixed checklist have run on only two cases.
+- Checks generated for reasons with no fixed checklist have run on only three cases. In those checks the LLM does its own date arithmetic, and its working is shown, so those results are not repeatable.
 - Scanned PDFs do not work.

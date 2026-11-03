@@ -1,0 +1,32 @@
+Model: openai/gpt-oss-120b
+
+First-pass review, not advice or a decision.
+
+Rejection reason: Other
+Clause in question: 6.2 Reimbursement Claims
+Verdict: Reason Not Supported
+Why: The documents show this does not hold: Required documents were not all submitted within 30 days Working: Discharge 20 June 2026 to submission 5 July 2026 = 15 days, within 30 days required
+Clause relied on: "couriered the claim form, bills and reports to the insurer on 5 July 2026" (hospital_summary)
+Next step: The documents contradict what the rejection needs. Raise this with the insurer, citing the quote.
+Checks: generated from the clause for this claim, not tested.
+Conditions for the rejection to hold:
+  True: No waiver applies
+  True: No exception in the clause applies
+  True: Discharge occurred
+  Unknown: Claim documents were submitted later than 30 days after discharge
+  False: Required documents were not all submitted within 30 days
+  True: Clause applies to reimbursement claims
+  True: This is a reimbursement claim
+Decided by: generated_3
+
+Evidence Checklist
+- Found: Illness treated = Acute gastroenteritis with dehydration | "Final diagnosis: Acute gastroenteritis with dehydration" (hospital_summary)
+- Found: Clause relied on = 6.2 Reimbursement Claims | "You must submit the claim form, discharge summary, bills, investigation reports and prescriptions within 30 days of discharge." (clause 6.2, page 5)
+- Not Found: Fraud alleged
+- Not Found: Waiver or change to the clause
+- Not Found: Exception in the clause
+- Found: Discharge occurred = yes | "Date of discharge: 20 June 2026" (hospital_summary) | LLM working: Discharge date found in hospital_summary as 20 June 2026, confirming discharge occurred.
+- Not Found: Claim documents were submitted later than 30 days after discharge | Quote did not match the source: the hospital claims desk couriered the claim form, bills and reports to the insurer on 5 July 2026
+- Found: Required documents were not all submitted within 30 days = no | "couriered the claim form, bills and reports to the insurer on 5 July 2026" (hospital_summary) | LLM working: Discharge 20 June 2026 to submission 5 July 2026 = 15 days, within 30 days required
+- Found: Clause applies to reimbursement claims = yes | "You must submit the claim form, discharge summary, bills, investigation reports and prescriptions within 30 days of discharge." (clause 6.2, page 5) | LLM working: Clause 6.2 states requirements for reimbursement claims, confirming it applies.
+- Found: This is a reimbursement claim = yes | "6.2 Reimbursement Claims. You must submit the claim form, discharge summary, bills, investigation reports and prescriptions within 30 days of discharge." (clause 6.2, page 5) | LLM working: Clause 6.2 explicitly labels the claim type as 'Reimbursement Claims', confirming it is a reimbursement claim.
