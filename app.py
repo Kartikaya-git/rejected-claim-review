@@ -11,6 +11,7 @@ from claim_review.models import CustomerFile, ItemStatus, Verdict
 from claim_review.pipeline import review_claim
 from claim_review.summary import summarise
 from claim_review.reader import DEFAULT_PROVIDER, PROVIDERS, LlmReader, ReaderError, load_api_key
+from claim_review.rules import RULE_NAMES
 
 DOCUMENTS = {
     "rejection_letter": ("Rejection letter", True),
@@ -101,9 +102,9 @@ def show_review(review) -> None:
                 st.caption(step)
 
     if review.rule_versions:
-        st.subheader("Rule Versions used")
+        st.subheader("Regulator rules used")
         for rule in review.rule_versions:
-            st.caption(f"{rule.id}: {rule.value}, evidence: {rule.evidence}. {rule.source}")
+            st.caption(f"{RULE_NAMES[rule.id]}: {rule.value} months, from {rule.evidence}. [Source]({rule.source})")
 
 
 def main() -> None:

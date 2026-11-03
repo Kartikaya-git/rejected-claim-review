@@ -20,6 +20,8 @@ class RuleVersion:
     evidence: str
 
 
+RULE_NAMES = {"ped_look_back_months": "Look-back limit", "moratorium_months": "Moratorium"}
+
 RULE_VERSIONS = (
     RuleVersion("ped_look_back_months", 48, None, date(2024, 3, 31), CIRCULAR_2020, "circular text, reproduced"),
     RuleVersion("ped_look_back_months", 36, NEW_RULES_FROM, None, INSURER_NOTE_2024, "insurer compliance note"),

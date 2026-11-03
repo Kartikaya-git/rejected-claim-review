@@ -370,6 +370,6 @@ def review_claim(customer_file: CustomerFile, reader: Reader, embedder: Embedder
         outcome.decided_by,
         conditions=outcome.conditions,
         other_reason=other_reason,
-        rule_versions=list(rule_sets[-1].values()),
+        rule_versions=list(rule_sets[-1].values()) if reason is RejectionReason.PRE_EXISTING_DISEASE else [],
         transition_flag=_transition_flag(outcome, outcomes[:-1]),
     )
