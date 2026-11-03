@@ -2,7 +2,11 @@
 
 Upload the documents of a rejected Indian health insurance claim, and this app checks whether the insurer's stated reason holds up, with the clause and evidence behind its result. It returns **Reason Supported**, **Reason Not Supported** or **Cannot Tell**. It gives a first review, and a claims advisor decides.
 
-## Run the app
+## Try it online
+
+**[rejected-claim-review.streamlit.app](https://rejected-claim-review.streamlit.app/)**: no install needed. Open it, upload the PDFs of any case in [test_cases](test_cases) as described below, paste a free API key from [console.groq.com](https://console.groq.com), and click **Run Review**. If the app has been idle, it may take a minute to wake up.
+
+## Or run it on your computer
 
 You need Python 3.12 or newer, and a free API key from [console.groq.com](https://console.groq.com).
 
@@ -27,7 +31,7 @@ python3 -m venv .venv
 | Hospital summary | `discharge_summary.pdf` |
 | Application form | `application_form.pdf`, if the folder has one |
 
-3. Paste your API key and click **Run Review**.
+3. Paste your API key and click **Run Review**, online or on your computer.
 4. Compare the output with `result.txt` in that folder.
 
 A review makes about 15 LLM calls and takes from under a minute to a few minutes, depending on rate limits. The first run also downloads a small embedding model. Groq's free tier allows only a few reviews a day per model, and the model's reading can vary between runs, so a result may differ from `result.txt`.
