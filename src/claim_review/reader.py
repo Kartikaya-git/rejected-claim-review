@@ -26,9 +26,14 @@ Reply with one JSON object and nothing else:
 - not_found: the documents do not mention this.
 - unclear: the documents mention it but do not settle it.
 Value formats: date = YYYY-MM-DD, months = a whole number of months, yes_no = yes or no, text = a short phrase.
-Never calculate, convert or adjust a value. Report it exactly as the document states it, even if a credit or other term seems to change it.
-The quote must itself show the date or month value.
+{value_rule}
 Quote one short continuous passage of under 30 words. Never shorten it with dots and never join separate parts."""
+
+NO_CALCULATION = """Never calculate, convert or adjust a value. Report it exactly as the document states it, even if a credit or other term seems to change it.
+The quote must itself show the date or month value."""
+
+MAY_CALCULATE = """You may compare dates and count days or months between them when the question needs it. Add a "working" string to the JSON that shows the dates or numbers you used and the result.
+Quote the passage your answer rests on most."""
 
 
 @dataclass(frozen=True)
@@ -89,6 +94,7 @@ class ReadingQuestion:
     id: str
     text: str
     answer_type: AnswerType
+    may_calculate: bool = False
 
 
 class Reader(Protocol):
@@ -146,7 +152,7 @@ def _parse(content: str) -> Answer:
     status = data.get("status")
     if status not in ("found", "not_found", "unclear"):
         raise ValueError("invalid status")
-    return Answer(data.get("value"), data.get("quote"), data.get("source"), status)
+    return Answer(data.get("value"), data.get("quote"), data.get("source"), status, data.get("working"))
 
 
 class LlmReader:
@@ -173,7 +179,7 @@ class LlmReader:
             "temperature": 0,
             **self.options,
             "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "system", "content": SYSTEM_PROMPT.replace("{value_rule}", MAY_CALCULATE if question.may_calculate else NO_CALCULATION)},
                 {"role": "user", "content": f"{documents}\n\nQuestion ({question.answer_type.value}): {question.text}"},
             ],
         }

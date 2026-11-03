@@ -181,7 +181,7 @@ def _read(
 ) -> tuple[Answer, str | None]:
     """Asks once, and once more if the answer fails its evidence check."""
     allowed = ", ".join(item.sources)
-    question = ReadingQuestion(item.id, f"{item.question} Quote only from: {allowed}.", item.answer_type)
+    question = ReadingQuestion(item.id, f"{item.question} Quote only from: {allowed}.", item.answer_type, item.may_calculate)
     answer = reader.answer(question, passages)
     problem = _evidence_problem(item, answer, documents)
     if problem:
@@ -224,6 +224,7 @@ def _check_item(item: ChecklistItem, evidence: Evidence, reader: Reader) -> Item
         quote=answer.quote,
         source=answer.source,
         location=evidence.location(answer.source, answer.quote),
+        working=answer.working,
         **result,
     )
 

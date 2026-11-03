@@ -288,13 +288,14 @@ def generated_item(number: int, fact: str) -> ChecklistItem:
         f"generated_{number}",
         fact,
         f"Do the documents show that this is true: {fact} Answer yes or no, and quote what shows it. Answer unclear "
-        "if they do not settle it, or if settling it needs a calculation.",
+        "if they do not settle it.",
         AnswerType.YES_NO,
         CLAIM_DOCUMENTS,
         required=False,
         context=("rejection_letter",),
         search_query=fact,
         keywords=fact,
+        may_calculate=True,
     )
 
 

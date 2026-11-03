@@ -196,6 +196,8 @@ def _not_declared(items: dict[str, ItemResult]) -> Condition:
 def _generated_condition(item: ItemResult) -> Condition:
     if _says(item, "no"):
         why = f"The documents show this does not hold: {item.label}"
+        if item.working:
+            why += f" Working: {item.working}"
         step = "The documents contradict what the rejection needs. Raise this with the insurer, citing the quote."
         return Condition(item.id, item.label, Truth.FALSE, why, step, item.id)
     if _says(item, "yes"):

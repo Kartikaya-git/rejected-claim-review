@@ -92,6 +92,8 @@ def show_review(review) -> None:
                 st.write(f"**Value:** {item.value}")
             if item.quote:
                 st.markdown(f"> {item.quote}")
+            if item.working:
+                st.caption(f"LLM working, not checked by code: {item.working}")
                 st.caption(f"{item.source}{', ' + item.location if item.location else ''}")
             if item.note:
                 st.caption(item.note)

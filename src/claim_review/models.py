@@ -68,6 +68,7 @@ class Answer:
     quote: str | None = None
     source: str | None = None
     status: str = "found"
+    working: str | None = None
 
     @classmethod
     def not_found(cls) -> "Answer":
@@ -101,6 +102,7 @@ class ChecklistItem:
     codes: tuple[str, ...] = ()
     uses_illness: bool = False
     retries: bool = False
+    may_calculate: bool = False
 
 
 @dataclass(frozen=True)
@@ -115,6 +117,7 @@ class ItemResult:
     note: str | None = None
     location: str | None = None
     search_trace: tuple[str, ...] = ()
+    working: str | None = None
 
 
 @dataclass(frozen=True)
