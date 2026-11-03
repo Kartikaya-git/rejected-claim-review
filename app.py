@@ -110,13 +110,14 @@ def main() -> None:
     st.warning("First-pass review, not advice or a decision. The Claims Advisor decides, and only public or synthetic data belongs here.")
 
     customer_file = collect_customer_file()
+    api_key = st.text_input("Groq API key (free from console.groq.com)", type="password", help="Used only for this session and never saved.")
     if st.button("Run Review", type="primary"):
         missing = [label for name, (label, required) in DOCUMENTS.items() if required and not customer_file.documents()[name].strip()]
         if missing:
             st.info("Not provided: " + ", ".join(missing) + ". Their Checklist Items will show as Not Found.")
         try:
             provider = PROVIDERS[os.environ.get("CLAIM_REVIEW_PROVIDER", DEFAULT_PROVIDER)]
-            reader = LlmReader(provider, load_api_key(provider))
+            reader = LlmReader(provider, api_key.strip() or load_api_key(provider))
             with st.spinner("Checking each Checklist Item. A long policy takes a few minutes."):
                 st.session_state["review"] = review_claim(customer_file, reader)
         except ReaderError as error:
