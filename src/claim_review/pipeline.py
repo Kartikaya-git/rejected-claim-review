@@ -57,8 +57,9 @@ MAX_GENERATED_CHECKS = 5
 CONDITIONS_QUESTION = ReadingQuestion(
     "rejection_conditions",
     "Read the clause the rejection letter relies on. List the facts that must all be true for that clause to justify "
-    f"this rejection, at most {MAX_GENERATED_CHECKS}, each a short statement about this claim that the claim documents "
-    "could prove or disprove. Put them in value, separated by ' | '. Quote the clause.",
+    f"this rejection, at most {MAX_GENERATED_CHECKS}, each a short statement about what happened in this claim that "
+    "the claim documents could prove or disprove. Do not list facts about the letter or about what the clause says. "
+    "Put them in value, separated by ' | '. Quote the clause.",
     AnswerType.TEXT,
 )
 
