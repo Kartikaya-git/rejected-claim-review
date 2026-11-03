@@ -30,7 +30,7 @@ python3 -m venv .venv
 3. Paste your API key and click **Run Review**.
 4. Compare the output with `result.txt` in that folder.
 
-A review makes about 15 LLM calls and takes a few minutes. The first run also downloads a small embedding model. Groq's free tier allows only a few reviews a day per model, and the model's reading can vary between runs, so a result may differ from `result.txt`.
+A review makes about 15 LLM calls and takes from under a minute to a few minutes, depending on rate limits. The first run also downloads a small embedding model. Groq's free tier allows only a few reviews a day per model, and the model's reading can vary between runs, so a result may differ from `result.txt`.
 
 ## Test cases and results
 
