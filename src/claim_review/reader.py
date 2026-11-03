@@ -101,16 +101,6 @@ class Reader(Protocol):
     def answer(self, question: ReadingQuestion, passages: list[Passage]) -> Answer: ...
 
 
-class RecordedReader:
-    """Replays saved answers, so tests need no LLM."""
-
-    def __init__(self, answers: dict[str, Answer]):
-        self.answers = answers
-
-    def answer(self, question: ReadingQuestion, passages: list[Passage]) -> Answer:
-        return self.answers[question.id]
-
-
 def load_api_key(provider: Provider) -> str:
     key = os.environ.get(provider.key_env)
     if not key and provider.key_file.exists():

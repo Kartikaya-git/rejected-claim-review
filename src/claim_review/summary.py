@@ -65,26 +65,3 @@ def summarise(review: Review) -> ReviewSummary:
         review.next_step,
         review.decided_by,
     )
-
-
-def format_summary(review: Review) -> str:
-    s = summarise(review)
-    lines = ["First-pass review, not advice or a decision.", "", f"Rejection reason: {s.rejection_reason}"]
-    if s.clause_cited:
-        lines.append(f"Clause in question: {s.clause_cited}")
-    lines += [f"Verdict: {s.verdict}", f"Why: {s.why}"]
-    if s.clause_quote:
-        lines.append(f'Clause relied on: "{s.clause_quote}" ({s.clause_location})')
-    lines.append(f"Next step: {s.next_step}")
-    if review.transition_flag:
-        lines.append(f"Transition Flag: {review.transition_flag}")
-    if review.other_reason:
-        lines.append(f'Other reason in the letter, not checked: "{review.other_reason}"')
-    if review.checks_generated:
-        lines.append("Checks: generated from the clause for this claim, not tested.")
-    if review.conditions:
-        lines.append("Conditions for the rejection to hold:")
-        lines += [f"  {c.truth.value}: {c.label}" for c in review.conditions]
-    if s.decided_by:
-        lines.append(f"Decided by: {s.decided_by}")
-    return "\n".join(lines)

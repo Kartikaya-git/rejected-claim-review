@@ -1,4 +1,4 @@
-# Checking Rejected Health Insurance Claims
+# AI-Assisted Review of Rejected Health Insurance Claims
 
 Upload the documents of a rejected Indian health insurance claim, and this app checks whether the insurer's stated reason holds up, with the clause and evidence behind its result. It returns **Reason Supported**, **Reason Not Supported** or **Cannot Tell**. It gives a first review, and a claims advisor decides.
 

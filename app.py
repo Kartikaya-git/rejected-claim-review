@@ -71,6 +71,8 @@ def show_review(review) -> None:
         st.warning(f"Transition Flag: {review.transition_flag}")
     if review.other_reason:
         st.warning(f'Other reason in the letter, not checked: "{review.other_reason}"')
+    if review.checks_generated:
+        st.info("These checks were generated from the clause for this claim and are not tested, so this review can never say Reason Supported.")
     if review.conditions:
         st.subheader("Conditions for the rejection to hold")
         for condition in review.conditions:
@@ -108,8 +110,8 @@ def show_review(review) -> None:
 
 
 def main() -> None:
-    st.set_page_config(page_title="Rejected Claim Review", layout="centered")
-    st.title("Rejected Claim Review")
+    st.set_page_config(page_title="AI-Assisted Review of Rejected Health Insurance Claims", layout="centered")
+    st.title("AI-Assisted Review of Rejected Health Insurance Claims")
     st.warning("First-pass review, not advice or a decision. The Claims Advisor decides, and only public or synthetic data belongs here.")
 
     customer_file = collect_customer_file()
@@ -118,9 +120,14 @@ def main() -> None:
         missing = [label for name, (label, required) in DOCUMENTS.items() if required and not customer_file.documents()[name].strip()]
         if missing:
             st.info("Not provided: " + ", ".join(missing) + ". Their Checklist Items will show as Not Found.")
+        provider = PROVIDERS[os.environ.get("CLAIM_REVIEW_PROVIDER", DEFAULT_PROVIDER)]
         try:
-            provider = PROVIDERS[os.environ.get("CLAIM_REVIEW_PROVIDER", DEFAULT_PROVIDER)]
-            reader = LlmReader(provider, api_key.strip() or load_api_key(provider))
+            key = api_key.strip() or load_api_key(provider)
+        except ReaderError:
+            st.error("Paste a free Groq API key in the box above. You can get one at console.groq.com.")
+            st.stop()
+        try:
+            reader = LlmReader(provider, key)
             with st.spinner("Checking each Checklist Item. A long policy takes a few minutes."):
                 st.session_state["review"] = review_claim(customer_file, reader)
         except ReaderError as error:

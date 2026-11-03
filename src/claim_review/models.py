@@ -71,10 +71,6 @@ class Answer:
     working: str | None = None
 
     @classmethod
-    def not_found(cls) -> "Answer":
-        return cls(status="not_found")
-
-    @classmethod
     def unclear(cls) -> "Answer":
         return cls(status="unclear")
 
